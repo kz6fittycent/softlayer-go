@@ -18,4 +18,4 @@ parts:
   my-part:
     source: https://github.com/kz6fittycent/softlayer-go
     source-type: git
-    plugin: golang
+    plugin: go
