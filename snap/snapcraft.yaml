@@ -8,7 +8,7 @@ confinement: strict # use 'strict' once you have the right plugs
 
 apps:
   softlayer-go:
-    command: softlayer-go
+    command: bin/softlayer-go
     plugs:
       - home
       - network
