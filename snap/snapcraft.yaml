@@ -8,7 +8,7 @@ confinement: strict # use 'strict' once you have the right plugs
 
 apps:
   softlayer-go:
-    command: ./softlayer-go
+    command: bin/softlayer-go
     plugs:
       - home
       - network
@@ -19,3 +19,20 @@ parts:
     source: https://github.com/kz6fittycent/softlayer-go
     source-type: git
     plugin: go
+    go-importpath: github.com/kz6fittycent/softlayer-go
+    
+    build-packages:
+      - git
+      
+    stage-packages:
+      - git
+      
+    prepare: |
+      export GOPATH=$(dirname $SNAPCRAFT_PART_INSTALL)/go
+      export PATH=$GOPATH/bin:$PATH
+      cd $GOPATH/src/github.com/kz6fittycent/softlayer-go
+      
+    install: |
+      $SNAPCRAFT_PART_INSTALL/bin/softlayer-go
+      
+    after: [go]
