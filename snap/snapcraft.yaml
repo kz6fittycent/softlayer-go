@@ -33,6 +33,6 @@ parts:
       cd $GOPATH/src/github.com/kz6fittycent/softlayer-go
       
     install: |
-      $SNAPCRAFT_PART_INSTALL/bin/softlayer-go
+      $SNAPCRAFT_PART_INSTALL/softlayer-go
       
     after: [go]
