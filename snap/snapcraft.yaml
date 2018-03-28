@@ -1,0 +1,21 @@
+name: softlayer-go # check to see if it's available
+version: '1.0+git' # check versioning
+summary: The Official and Complete SoftLayer API Client for Golang # 79 char long summary
+description: |
+    This library contains a complete implementation of the SoftLayer API for client application development in the Go programming language. Code for each API data type and service method is pre-generated, using the SoftLayer API metadata endpoint as input, thus ensuring 100% coverage of the API right out of the gate. It was designed to feel as natural as possible for programmers familiar with other popular SoftLayer SDKs, and attempts to minimize unnecessary boilerplate and type assertions where possible.
+grade: stable # must be 'stable' to release into candidate/stable channels
+confinement: strict # use 'strict' once you have the right plugs
+
+apps:
+  softlayer-go:
+    command: softlayer-go
+    plugs:
+      - home
+      - network
+      - network-bind
+     
+parts: 
+  my-part:
+    source: https://github.com/kz6fittycent/softlayer-go
+    source-type: git
+    plugin: golang
